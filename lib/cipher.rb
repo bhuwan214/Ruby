@@ -34,6 +34,28 @@ def ceaser_cipher (str,shift)
     return new_string.join("")
 end
 
+  new_string= ceaser_cipher(string,key)
 
+puts new_string
+puts"\n"
 
-  p ceaser_cipher(string,key)
+def reverse_ceaser_cipher (new_str,re_shift)
+
+    old_string = new_str.split("").map do |char|
+        if char.match /[a-z]/
+            char= char.ord - re_shift.to_i
+            char = (char - 97) % 26 + 97
+            char.chr
+        
+        elsif char.match /[A-Z]/
+            char= chr.ord - re_shift.to_i
+            char =(char-65) %26 +65 
+            char.chr 
+        else 
+            char 
+        end
+    end
+    return old_string.join("")
+end
+
+  puts reverse_ceaser_cipher(new_string,key)
